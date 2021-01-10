@@ -30,7 +30,7 @@ public class Pedidos implements Serializable {
 	public Date dataPedido;
 
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "IDCLIENTE")
+	@JoinColumn(name = "idcliente")
 	private Cliente cliente;
 
 	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "pedido")

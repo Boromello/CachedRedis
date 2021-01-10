@@ -27,7 +27,7 @@ public class ItensPedido implements Serializable {
 	private Pedidos pedido;
 	
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "IDPRODUTO")
+	@JoinColumn(name = "idproduto")
 	private Produto produto;
 
 	public double getQuantidade() {
@@ -44,14 +44,6 @@ public class ItensPedido implements Serializable {
 	
 	public void setValorUni(double valorUni) {
 		this.valorUni = valorUni;
-	}
-	
-	public Pedidos getPedido() {
-		return pedido;
-	}
-
-	public void setPedido(Pedidos pedido) {
-		this.pedido = pedido;
 	}
 
 	public ItensPedidoPK getItemPedidoPK() {
