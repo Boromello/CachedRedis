@@ -20,7 +20,7 @@ import br.com.fiap.entity.Endereco;
 import br.com.fiap.service.IEnderecoService;
 
 @RestController
-@RequestMapping("cadastrosGerais")
+@RequestMapping("endereco")
 public class EnderecoController {
 	@Autowired
 	private IEnderecoService enderecoService;

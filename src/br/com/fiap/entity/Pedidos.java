@@ -33,7 +33,7 @@ public class Pedidos implements Serializable {
 	@JoinColumn(name = "IDCLIENTE")
 	private Cliente cliente;
 
-	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "itenspedido")
+	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "pedido")
 	private Set<ItensPedido> itens = new LinkedHashSet<ItensPedido>();
 
 	public Date getDataPedido() {

@@ -1,15 +1,17 @@
 package br.com.fiap.entity;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 
-public class ItensPedidoPK {
+public class ItensPedidoPK implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	@Column(name = "id")
-	private long idpedido;
+	public long idpedido;
 
 	@Column(name = "sequencia")
-	private int sequencia;
+	public int sequencia;
 
 	public long getIDPedido() {
 		return idpedido;

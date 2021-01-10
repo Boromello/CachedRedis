@@ -22,7 +22,7 @@ public class ItensPedidoService implements IItensPedidoService {
 	@Cacheable(value= "ItensPedidoCache", key= "#id")		
 	public ItensPedido getItemPedidoByIdAndSeq(long id, int seq) {
 		System.out.println("getItensPedidoByIdAndSeq()");		
-		return itenspedidoRepository.findByIdAndSeq(id, seq).get();
+		return itenspedidoRepository.findById(id).get();
 	}
 	@Override	
 	@Cacheable(value= "allItensPedidosCache", unless= "#result.size() == 0")	

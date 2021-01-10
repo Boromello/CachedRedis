@@ -16,14 +16,14 @@ public class ItensPedido implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	@EmbeddedId
-	private ItensPedidoPK itempedidoPK; 
+	@JoinColumns({@JoinColumn(name="id",referencedColumnName="id"),
+		 @JoinColumn(name="sequencia",referencedColumnName="sequencia")})
+	public ItensPedidoPK itempedidoPK; 
 
 	public double quantidade;
 	public double valorUni;
 
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumns({@JoinColumn(name="id",referencedColumnName="id"),
-		 @JoinColumn(name="sequencia",referencedColumnName="sequencia")})
+	@ManyToOne(fetch = FetchType.LAZY)	
 	private Pedidos pedido;
 	
 	@ManyToOne(fetch = FetchType.LAZY)

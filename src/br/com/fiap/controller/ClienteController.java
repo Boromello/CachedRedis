@@ -20,7 +20,7 @@ import br.com.fiap.entity.Cliente;
 import br.com.fiap.service.IClienteService;
 
 @RestController
-@RequestMapping("cadastrosGerais")
+@RequestMapping("cliente")
 public class ClienteController {
 	
 	@Autowired

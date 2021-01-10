@@ -6,7 +6,5 @@ import org.springframework.data.repository.CrudRepository;
 import br.com.fiap.entity.ItensPedido;
 
 public interface ItensPedidoRepository extends CrudRepository<ItensPedido, Long> {
-
-	Optional<ItensPedido> findByIdAndSeq(long id, int seq);
 	
 }
