@@ -70,7 +70,7 @@ public class ClientUtil {
 		HttpHeaders headers = new HttpHeaders();
 		headers.setContentType(MediaType.APPLICATION_JSON);
 		RestTemplate restTemplate = new RestTemplate();
-		String url = "http://localhost:8080/spring-app/cliente/{id}";
+		String url = "http://localhost:8080/spring-app/usuario/cliente/{id}";
 		HttpEntity<String> requestEntity = new HttpEntity<String>(headers);
 		ResponseEntity<Cliente> responseEntity = restTemplate.exchange(url, HttpMethod.GET, requestEntity,
 				Cliente.class, id);
@@ -82,7 +82,7 @@ public class ClientUtil {
 		HttpHeaders headers = new HttpHeaders();
 		headers.setContentType(MediaType.APPLICATION_JSON);
 		RestTemplate restTemplate = new RestTemplate();
-		String url = "http://localhost:8080/spring-app/clientes";
+		String url = "http://localhost:8080/spring-app/usuario/clientes";
 		HttpEntity<String> requestEntity = new HttpEntity<String>(headers);
 		ResponseEntity<Cliente[]> responseEntity = restTemplate.exchange(url, HttpMethod.GET, requestEntity,
 				Cliente[].class);
@@ -96,17 +96,18 @@ public class ClientUtil {
 		HttpHeaders headers = new HttpHeaders();
 		headers.setContentType(MediaType.APPLICATION_JSON);
 		RestTemplate restTemplate = new RestTemplate();
-		String url = "http://localhost:8080/spring-app/cliente/cliente";
+		String url = "http://localhost:8080/spring-app/usuario/cliente";
 		HttpEntity<Cliente> requestEntity = new HttpEntity<Cliente>(objCliente, headers);
 		URI uri = restTemplate.postForLocation(url, requestEntity);
 		System.out.println(uri.getPath());
+		
 	}
 
 	public void updateClienteDemo(Cliente objCliente) {
 		HttpHeaders headers = new HttpHeaders();
 		headers.setContentType(MediaType.APPLICATION_JSON);
 		RestTemplate restTemplate = new RestTemplate();
-		String url = "http://localhost:8080/spring-app/cliente/cliente";
+		String url = "http://localhost:8080/spring-app/usuario/cliente";
 		HttpEntity<Cliente> requestEntity = new HttpEntity<Cliente>(objCliente, headers);
 		restTemplate.put(url, requestEntity);
 	}
@@ -115,7 +116,7 @@ public class ClientUtil {
 		HttpHeaders headers = new HttpHeaders();
 		headers.setContentType(MediaType.APPLICATION_JSON);
 		RestTemplate restTemplate = new RestTemplate();
-		String url = "http://localhost:8080/spring-app/cliente/cliente/{id}";
+		String url = "http://localhost:8080/spring-app/usuario/cliente/{id}";
 		HttpEntity<Cliente> requestEntity = new HttpEntity<Cliente>(headers);
 		restTemplate.exchange(url, HttpMethod.DELETE, requestEntity, Void.class, id);
 	}
@@ -124,7 +125,7 @@ public void getEnderecoByIdDemo(long id) {
 		HttpHeaders headers = new HttpHeaders();
 		headers.setContentType(MediaType.APPLICATION_JSON);
 		RestTemplate restTemplate = new RestTemplate();
-		String url = "http://localhost:8080/spring-app/estoque/endereco/endereco/{id}";
+		String url = "http://localhost:8080/spring-app/entrega/endereco/{id}";
 		HttpEntity<String> requestEntity = new HttpEntity<String>(headers);
 		ResponseEntity<Endereco> responseEntity = restTemplate.exchange(url, HttpMethod.GET, requestEntity,
 				Endereco.class, id);
@@ -136,7 +137,7 @@ public void getEnderecoByIdDemo(long id) {
 		HttpHeaders headers = new HttpHeaders();
 		headers.setContentType(MediaType.APPLICATION_JSON);
 		RestTemplate restTemplate = new RestTemplate();
-		String url = "http://localhost:8080/spring-app/estoque/endereco/enderecos";
+		String url = "http://localhost:8080/spring-app/entrega/enderecos";
 		HttpEntity<String> requestEntity = new HttpEntity<String>(headers);
 		ResponseEntity<Endereco[]> responseEntity = restTemplate.exchange(url, HttpMethod.GET, requestEntity,
 				Endereco[].class);
@@ -150,7 +151,7 @@ public void getEnderecoByIdDemo(long id) {
 		HttpHeaders headers = new HttpHeaders();
 		headers.setContentType(MediaType.APPLICATION_JSON);
 		RestTemplate restTemplate = new RestTemplate();
-		String url = "http://localhost:8080/spring-app/endereco/endereco";
+		String url = "http://localhost:8080/spring-app/entrega/endereco";
 		HttpEntity<Endereco> requestEntity = new HttpEntity<Endereco>(objEndereco, headers);
 		URI uri = restTemplate.postForLocation(url, requestEntity);
 		System.out.println(uri.getPath());
@@ -160,7 +161,7 @@ public void getEnderecoByIdDemo(long id) {
 		HttpHeaders headers = new HttpHeaders();
 		headers.setContentType(MediaType.APPLICATION_JSON);
 		RestTemplate restTemplate = new RestTemplate();
-		String url = "http://localhost:8080/spring-app/endereco/endereco";
+		String url = "http://localhost:8080/spring-app/entrega/endereco";
 		HttpEntity<Endereco> requestEntity = new HttpEntity<Endereco>(objEndereco, headers);
 		restTemplate.put(url, requestEntity);
 	}
@@ -169,7 +170,7 @@ public void getEnderecoByIdDemo(long id) {
 		HttpHeaders headers = new HttpHeaders();
 		headers.setContentType(MediaType.APPLICATION_JSON);
 		RestTemplate restTemplate = new RestTemplate();
-		String url = "http://localhost:8080/spring-app/endereco/endereco/{id}";
+		String url = "http://localhost:8080/spring-app/entrega/endereco/{id}";
 		HttpEntity<Endereco> requestEntity = new HttpEntity<Endereco>(headers);
 		restTemplate.exchange(url, HttpMethod.DELETE, requestEntity, Void.class, id);
 	}
@@ -230,29 +231,17 @@ public void getPedidoByIdDemo(long id) {
 
 	public static void main(String args[]) {
 		ClientUtil util = new ClientUtil();
-		/*
-		Produto objProduto1 = new Produto(1, "Banana");
-		Produto objProduto2 = new Produto(2, "Maca");
-		Produto objProduto3 = new Produto(3, "Laranja");
-		Produto objProduto4 = new Produto(4, "Pera");
-		Produto objProduto5 = new Produto(5, "Uva");
-		Produto objProduto6 = new Produto(6, "Uva Verde");
+		
+		Produto objProduto1 = new Produto(1, "Morango", 10, 1.00);
+		Produto objProduto2 = new Produto(2, "Maca", 100, 0.50);
+		Produto objProduto3 = new Produto(3, "Laranja", 50, 0.50);
 		util.addProdutoDemo(objProduto1);
 		util.addProdutoDemo(objProduto2);
 		util.addProdutoDemo(objProduto3);
-		util.addProdutoDemo(objProduto4);
-		util.addProdutoDemo(objProduto5);
-		util.addProdutoDemo(objProduto6);
-
-		objProduto1.nome = "Pitaya";
-		util.updateProdutoDemo(objProduto1);
-
-		util.deleteProdutoDemo(6);
-		util.getProdutoByIdDemo(7);
-
-		util.getAllProdutosDemo();*/		
+		
 		Cliente cliente = new Cliente(1, "Coca-Cola");
-		Endereco endereco = new Endereco(1, "Rua Teste", "Sao Paulo", "07435-655", cliente.getId());
+		Endereco endereco = new Endereco(1, "Rua Teste", "Sao Paulo", "07435-655");
+		endereco.setCliente(cliente);
 		util.addClienteDemo(cliente);
 		util.addEnderecoDemo(endereco);
 	}

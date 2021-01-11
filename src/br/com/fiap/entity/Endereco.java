@@ -21,19 +21,17 @@ public class Endereco implements Serializable {
 	public String rua;
 	public String cidade;
 	public String cep;
-	public long idcliente;
 	
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "idcliente")
 	private Cliente cliente;
 
-	public Endereco(long id, String rua, String cidade, String cep, long idcliente) {
+	public Endereco(long id, String rua, String cidade, String cep) {
 		super();
 		this.id = id;
 		this.rua = rua;
 		this.cidade = cidade;
 		this.cep = cep;
-		this.idcliente = idcliente;
 	}
 
 	public long getId() {
@@ -44,14 +42,6 @@ public class Endereco implements Serializable {
 		this.id = id;
 	}
 	
-	public long getIdCliente() {
-		return idcliente;
-	}
-
-	public void setIdCliente(long idcliente) {
-		this.idcliente = idcliente;
-	}
-
 	public String getRua() {
 		return rua;
 	}

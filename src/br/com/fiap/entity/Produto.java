@@ -21,11 +21,16 @@ public class Produto implements Serializable {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	public long id;
 	public String nome;	
+	public long quantidade;
+	public double valor;
 	
-	public Produto(long id, String nome) {
+	public Produto(long id, String nome, long qtde, double valor) {
 		super();
 		this.id = id;
 		this.nome = nome;
+		this.quantidade = qtde;
+		this.valor = valor;
+		
 	}
 
 	public Produto() {

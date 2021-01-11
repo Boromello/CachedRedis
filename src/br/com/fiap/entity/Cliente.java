@@ -22,48 +22,22 @@ public class Cliente implements Serializable {
 	public String razaoSocial;
 	
 	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "cliente")
-	private Set<Pedidos> pedidos = new LinkedHashSet<Pedidos>();
-
-	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "cliente")
 	private Set<Endereco> enderecos = new LinkedHashSet<Endereco>();
-
+	
 	public Cliente(int id, String razaoSocial) {
 		super();
 		this.id = id;
 		this.razaoSocial = razaoSocial;
 	}
-
-	public long getId() {
-		return id;
+	
+	public Cliente() {
+		super();
 	}
+		
+	/*@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "cliente")
+	private Set<Pedidos> pedidos = new LinkedHashSet<Pedidos>();
 
-	public void setId(int id) {
-		this.id = id;
-	}
-
-	public String getRazaoSocial() {
-		return razaoSocial;
-	}
-
-	public void setRazaoSocial(String razaoSocial) {
-		this.razaoSocial = razaoSocial;
-	}
-
-	public Set<Pedidos> getPedidos() {
-		return pedidos;
-	}
-
-	public void setPedidos(Set<Pedidos> pedidos) {
-		this.pedidos = pedidos;
-	}
-
-	public Set<Endereco> getEnderecos() {
-		return enderecos;
-	}
-
-	public void setEnderecos(Set<Endereco> enderecos) {
-
-		this.enderecos = enderecos;
-	}
+	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "cliente")
+	private Set<Endereco> enderecos = new LinkedHashSet<Endereco>();*/
 
 }
