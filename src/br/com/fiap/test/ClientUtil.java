@@ -238,11 +238,12 @@ public void getPedidoByIdDemo(long id) {
 		util.addProdutoDemo(objProduto1);
 		util.addProdutoDemo(objProduto2);
 		util.addProdutoDemo(objProduto3);
-		
+				
 		Cliente cliente = new Cliente(1, "Coca-Cola");
+		util.addClienteDemo(cliente);
+		
 		Endereco endereco = new Endereco(1, "Rua Teste", "Sao Paulo", "07435-655");
 		endereco.setCliente(cliente);
-		util.addClienteDemo(cliente);
 		util.addEnderecoDemo(endereco);
 	}
 }

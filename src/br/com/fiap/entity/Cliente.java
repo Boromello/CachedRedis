@@ -33,6 +33,23 @@ public class Cliente implements Serializable {
 	public Cliente() {
 		super();
 	}
+	
+	public Set<Endereco> getEnderecos() {
+		return enderecos;
+	}
+
+	public void setEnderecos(Set<Endereco> enderecos) {
+		this.enderecos = enderecos;
+	}
+	
+	public long getId() {
+		return this.id;
+	}
+	
+	public void setId(long id) {
+		this.id = id;
+	}
+		
 		
 	/*@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "cliente")
 	private Set<Pedidos> pedidos = new LinkedHashSet<Pedidos>();

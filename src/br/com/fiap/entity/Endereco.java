@@ -1,6 +1,8 @@
 package br.com.fiap.entity;
 
 import java.io.Serializable;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -14,7 +16,7 @@ import javax.persistence.Table;
 @Table(name = "endereco")
 public class Endereco implements Serializable {
 	private static final long serialVersionUID = 1L;
-
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	public long id;
@@ -22,7 +24,7 @@ public class Endereco implements Serializable {
 	public String cidade;
 	public String cep;
 	
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	@JoinColumn(name = "idcliente")
 	private Cliente cliente;
 
@@ -32,6 +34,10 @@ public class Endereco implements Serializable {
 		this.rua = rua;
 		this.cidade = cidade;
 		this.cep = cep;
+	}
+	
+	public Endereco() {
+		super();
 	}
 
 	public long getId() {
