@@ -59,5 +59,15 @@ public class Pedidos implements Serializable {
 	public void setItens(Set<ItensPedido> itens) {
 		this.itens = itens;
 	}
+	
+	public Pedidos() {
+		super();
+	}
+	
+	public Pedidos(long id, Date dataPedido) {
+		super();
+		this.id = id;
+		this.dataPedido = dataPedido;
+	}
 
 } 

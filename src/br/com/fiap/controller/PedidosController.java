@@ -20,7 +20,7 @@ import br.com.fiap.entity.Pedidos;
 import br.com.fiap.service.IPedidosService;
 
 @RestController
-@RequestMapping("vendas/pedidos")
+@RequestMapping("vendas")
 public class PedidosController {
 	
 	@Autowired

@@ -2,6 +2,7 @@ package br.com.fiap.entity;
 
 import java.io.Serializable;
 
+import javax.persistence.CascadeType;
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -23,10 +24,10 @@ public class ItensPedido implements Serializable {
 	public double quantidade;
 	public double valorUni;
 
-	@ManyToOne(fetch = FetchType.LAZY)	
+	@ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)	
 	private Pedidos pedido;
 	
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	@JoinColumn(name = "idproduto")
 	private Produto produto;
 
@@ -53,5 +54,32 @@ public class ItensPedido implements Serializable {
 	public void setItensPedidoPK(ItensPedidoPK itempedidoPK) {
 		this.itempedidoPK = itempedidoPK;
 	}
+
+	public Produto getProduto() {
+		return produto;
+	}
+
+	public void setProduto(Produto produto) {
+		this.produto = produto;
+	}
+
+	public Pedidos getPedido() {
+		return pedido;
+	}
+
+	public void setPedido(Pedidos pedido) {
+		this.pedido = pedido;
+	}
+	
+	public ItensPedido() {
+		super();
+	}
+	
+	public ItensPedido(double quantidade, double valorUni) {
+		super();
+		this.quantidade = quantidade;
+		this.valorUni = valorUni;
+	}
+	
 
 }
