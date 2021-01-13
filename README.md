@@ -1,6 +1,11 @@
 # Sping Data JPA + Cache Redis
 Sistema de cadastro de produtos e pedidos em um portal de e-commerce
 
+## Endpoints
+````Java
+http://localhost:8080/spring-app/estoque/produto/{id}
+````
+
 ## Colaboradores
 
 | Colaborador | Github |
