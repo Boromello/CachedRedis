@@ -7,6 +7,10 @@ GET - Produto por ID
 ````Java
 http://localhost:8080/spring-app/estoque/produto/{id}
 ````
+GET - Todos os produtos
+````Java
+http://localhost:8080/spring-app/estoque/produtos
+````
 
 ## Colaboradores
 
