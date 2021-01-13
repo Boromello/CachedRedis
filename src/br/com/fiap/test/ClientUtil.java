@@ -235,7 +235,7 @@ public void getPedidoByIdDemo(long id) {
 		HttpHeaders headers = new HttpHeaders();
 		headers.setContentType(MediaType.APPLICATION_JSON);
 		RestTemplate restTemplate = new RestTemplate();
-		String url = "http://localhost:8080/spring-app/vendas2/itensPedido/{id}";
+		String url = "http://localhost:8080/spring-app/vendas2/itenspedido/{id}";
 		HttpEntity<String> requestEntity = new HttpEntity<String>(headers);
 		ResponseEntity<ItensPedido> responseEntity = restTemplate.exchange(url, HttpMethod.GET, requestEntity,
 				ItensPedido.class, id);
@@ -247,7 +247,7 @@ public void getPedidoByIdDemo(long id) {
 		HttpHeaders headers = new HttpHeaders();
 		headers.setContentType(MediaType.APPLICATION_JSON);
 		RestTemplate restTemplate = new RestTemplate();
-		String url = "http://localhost:8080/spring-app/vendas2/itensPedidos";
+		String url = "http://localhost:8080/spring-app/vendas2/itenspedidos";
 		HttpEntity<String> requestEntity = new HttpEntity<String>(headers);
 		ResponseEntity<ItensPedido[]> responseEntity = restTemplate.exchange(url, HttpMethod.GET, requestEntity,
 				ItensPedido[].class);
@@ -261,7 +261,7 @@ public void getPedidoByIdDemo(long id) {
 		HttpHeaders headers = new HttpHeaders();
 		headers.setContentType(MediaType.APPLICATION_JSON);
 		RestTemplate restTemplate = new RestTemplate();
-		String url = "http://localhost:8080/spring-app/vendas2/itensPedido";
+		String url = "http://localhost:8080/spring-app/vendas2/itenspedido";
 		HttpEntity<ItensPedido> requestEntity = new HttpEntity<ItensPedido>(objItensPedido, headers);
 		URI uri = restTemplate.postForLocation(url, requestEntity);
 		System.out.println(uri.getPath());
@@ -271,7 +271,7 @@ public void getPedidoByIdDemo(long id) {
 		HttpHeaders headers = new HttpHeaders();
 		headers.setContentType(MediaType.APPLICATION_JSON);
 		RestTemplate restTemplate = new RestTemplate();
-		String url = "http://localhost:8080/spring-app/vendas2/itensPedido";
+		String url = "http://localhost:8080/spring-app/vendas2/itenspedido";
 		HttpEntity<ItensPedido> requestEntity = new HttpEntity<ItensPedido>(objItensPedido, headers);
 		restTemplate.put(url, requestEntity);
 	}
@@ -280,7 +280,7 @@ public void getPedidoByIdDemo(long id) {
 		HttpHeaders headers = new HttpHeaders();
 		headers.setContentType(MediaType.APPLICATION_JSON);
 		RestTemplate restTemplate = new RestTemplate();
-		String url = "http://localhost:8080/spring-app/vendas2/itensPedido/{id}";
+		String url = "http://localhost:8080/spring-app/vendas2/itenspedido/{id}";
 		HttpEntity<ItensPedido> requestEntity = new HttpEntity<ItensPedido>(headers);
 		restTemplate.exchange(url, HttpMethod.DELETE, requestEntity, Void.class, id);
 	}
@@ -296,16 +296,18 @@ public void getPedidoByIdDemo(long id) {
 		util.addProdutoDemo(objProduto3);
 				
 		Cliente cliente = new Cliente(1, "Coca-Cola");
-		util.addClienteDemo(cliente);
+		//util.addClienteDemo(cliente);
 		
 		Endereco endereco = new Endereco(1, "Rua Teste", "Sao Paulo", "07435-655");
 		endereco.setCliente(cliente);
 		util.addEnderecoDemo(endereco);
 		Date d = new Date();
 		Pedidos pedido = new Pedidos(1, d);
-		pedido.setCliente(cliente);
+		pedido.setCliente(cliente);		
 		util.addPedidoDemo(pedido);
 		ItensPedido itempedido = new ItensPedido(50, 20.00);
+		ItensPedidoPK pk = new ItensPedidoPK(1, 1);
+		itempedido.setItensPedidoPK(pk);
 		itempedido.setProduto(objProduto1);
 		itempedido.setPedido(pedido);
 		util.addItensPedidoDemo(itempedido);

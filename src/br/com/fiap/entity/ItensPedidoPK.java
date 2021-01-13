@@ -28,6 +28,16 @@ public class ItensPedidoPK implements Serializable {
 	public void setSequencia(int sequencia) {
 		this.sequencia = sequencia;
 	}
+	
+	public ItensPedidoPK() {
+		super();
+	}
+	
+	public ItensPedidoPK(long id, int seq) {
+		super();
+		this.idpedido = id;
+		this.sequencia = seq;
+	}
 
 	@Override
 	public boolean equals(Object o) {

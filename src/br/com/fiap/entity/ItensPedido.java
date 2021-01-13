@@ -24,7 +24,8 @@ public class ItensPedido implements Serializable {
 	public double quantidade;
 	public double valorUni;
 
-	@ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)	
+	@ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	@JoinColumn(name = "pedido_id")
 	private Pedidos pedido;
 	
 	@ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
