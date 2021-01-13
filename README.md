@@ -1,4 +1,5 @@
-# SpingJPA + Redis
+# Sping Data JPA + Cache Redis
+Sistema de cadastro de produtos e pedidos em um portal de e-commerce
 
 ## Colaboradores
 
