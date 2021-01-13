@@ -2,14 +2,30 @@
 Sistema de cadastro de produtos e pedidos em um portal de e-commerce
 
 ## Endpoints
-### Produto
-GET - Produto por ID
+#### Produtos
+
+**GET** - Produto por ID
 ````Java
 http://localhost:8080/spring-app/estoque/produto/{id}
 ````
-GET - Todos os produtos
+
+**GET** - Todos os produtos
 ````Java
 http://localhost:8080/spring-app/estoque/produtos
+````
+
+**POST** - Adicionar produto
+````Java
+http://localhost:8080/spring-app/estoque/produto
+````
+
+**UPDATE** - Atualizar produto
+````Java
+http://localhost:8080/spring-app/estoque/produto
+````
+**DELETE** - Deletar produto
+````Java
+http://localhost:8080/spring-app/estoque/produto/{id}
 ````
 
 ## Colaboradores
