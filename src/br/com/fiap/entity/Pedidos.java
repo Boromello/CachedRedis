@@ -29,12 +29,22 @@ public class Pedidos implements Serializable {
 	@Temporal(value = TemporalType.TIMESTAMP)	
 	public Date dataPedido;
 
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	@JoinColumn(name = "idcliente")
 	private Cliente cliente;
 
 	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "pedido")
 	private Set<ItensPedido> itens = new LinkedHashSet<ItensPedido>();
+	
+	public Pedidos() {
+		super();
+	}
+	
+	public Pedidos(long id, Date dataPedido) {
+		super();
+		this.id = id;
+		this.dataPedido = dataPedido;
+	}
 
 	public Date getDataPedido() {
 		return dataPedido;
@@ -60,14 +70,6 @@ public class Pedidos implements Serializable {
 		this.itens = itens;
 	}
 	
-	public Pedidos() {
-		super();
-	}
-	
-	public Pedidos(long id, Date dataPedido) {
-		super();
-		this.id = id;
-		this.dataPedido = dataPedido;
-	}
+
 
 } 

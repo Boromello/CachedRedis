@@ -24,6 +24,9 @@ public class Cliente implements Serializable {
 	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "cliente")
 	private Set<Endereco> enderecos = new LinkedHashSet<Endereco>();
 	
+	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "cliente")
+	private Set<Pedidos> pedidos = new LinkedHashSet<Pedidos>();
+	
 	public Cliente(int id, String razaoSocial) {
 		super();
 		this.id = id;
