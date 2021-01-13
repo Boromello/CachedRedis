@@ -3,7 +3,7 @@ Sistema de cadastro de produtos e pedidos em um portal de e-commerce
 
 ## Endpoints
 ### Produto
-#### GET Produto por ID
+GET - Produto por ID
 ````Java
 http://localhost:8080/spring-app/estoque/produto/{id}
 ````
