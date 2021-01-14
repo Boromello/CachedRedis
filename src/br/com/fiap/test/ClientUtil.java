@@ -296,16 +296,18 @@ public void getPedidoByIdDemo(long id) {
 		util.addProdutoDemo(objProduto3);
 				
 		Cliente cliente = new Cliente(1, "Coca-Cola");
-		//util.addClienteDemo(cliente);
+		util.addClienteDemo(cliente);
 		
 		Endereco endereco = new Endereco(1, "Rua Teste", "Sao Paulo", "07435-655");
 		endereco.setCliente(cliente);
 		util.addEnderecoDemo(endereco);
-		Date d = new Date();
-		Pedidos pedido = new Pedidos(1, d);
+		
+		Date dataAtual = new Date();
+		Pedidos pedido = new Pedidos(1, dataAtual);
 		pedido.setCliente(cliente);		
 		util.addPedidoDemo(pedido);
-		ItensPedido itempedido = new ItensPedido(50, 20.00);
+		
+		ItensPedido itempedido = new ItensPedido();
 		ItensPedidoPK pk = new ItensPedidoPK(1, 1);
 		itempedido.setItensPedidoPK(pk);
 		itempedido.setProduto(objProduto1);

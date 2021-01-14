@@ -21,9 +21,6 @@ public class ItensPedido implements Serializable {
 		 @JoinColumn(name="sequencia",referencedColumnName="sequencia")})
 	public ItensPedidoPK itempedidoPK; 
 
-	public double quantidade;
-	public double valorUni;
-
 	@ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	@JoinColumn(name = "pedido_id")
 	private Pedidos pedido;
@@ -31,22 +28,6 @@ public class ItensPedido implements Serializable {
 	@ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	@JoinColumn(name = "idproduto")
 	private Produto produto;
-
-	public double getQuantidade() {
-		return quantidade;
-	}	
-
-	public void setQuantidade(double quantidade) {
-		this.quantidade = quantidade;
-	}
-	
-	public double getValorUni() {
-		return valorUni;
-	}
-	
-	public void setValorUni(double valorUni) {
-		this.valorUni = valorUni;
-	}
 
 	public ItensPedidoPK getItemPedidoPK() {
 		return itempedidoPK;
@@ -76,11 +57,4 @@ public class ItensPedido implements Serializable {
 		super();
 	}
 	
-	public ItensPedido(double quantidade, double valorUni) {
-		super();
-		this.quantidade = quantidade;
-		this.valorUni = valorUni;
-	}
-	
-
 }
