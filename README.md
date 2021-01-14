@@ -10,10 +10,10 @@ http://localhost:8080/spring-app/estoque/produto/{id}
 ````
 
 **GET** - Todos os produtos
-````Java
+````java
 http://localhost:8080/spring-app/estoque/produtos
 ````
-````JSON
+````javascript
 [
     {
         "id": 1,
