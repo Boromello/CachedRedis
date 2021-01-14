@@ -13,6 +13,28 @@ http://localhost:8080/spring-app/estoque/produto/{id}
 ````Java
 http://localhost:8080/spring-app/estoque/produtos
 ````
+````JSON
+[
+    {
+        "id": 1,
+        "nome": "Morango",
+        "quantidade": 10,
+        "valor": 1.0
+    },
+    {
+        "id": 2,
+        "nome": "Maca",
+        "quantidade": 100,
+        "valor": 0.5
+    },
+    {
+        "id": 3,
+        "nome": "Laranja",
+        "quantidade": 50,
+        "valor": 0.5
+    }
+]
+````
 
 **POST** - Adicionar produto
 ````Java
