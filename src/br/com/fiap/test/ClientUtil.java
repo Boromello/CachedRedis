@@ -3,7 +3,6 @@ package br.com.fiap.test;
 import java.net.URI;
 import java.util.Date;
 
-import org.springframework.data.convert.Jsr310Converters.StringToLocalDateConverter;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
@@ -14,7 +13,7 @@ import org.springframework.web.client.RestTemplate;
 import br.com.fiap.entity.*;
 
 public class ClientUtil {
-	public void getProdutoByIdDemo(long id) {
+	public void getProdutoById(long id) {
 		HttpHeaders headers = new HttpHeaders();
 		headers.setContentType(MediaType.APPLICATION_JSON);
 		RestTemplate restTemplate = new RestTemplate();
@@ -26,7 +25,7 @@ public class ClientUtil {
 		System.out.println(produto);
 	}
 
-	public void getAllProdutosDemo() {
+	public void getAllProdutos() {
 		HttpHeaders headers = new HttpHeaders();
 		headers.setContentType(MediaType.APPLICATION_JSON);
 		RestTemplate restTemplate = new RestTemplate();
@@ -40,7 +39,7 @@ public class ClientUtil {
 		}
 	}
 
-	public void addProdutoDemo(Produto objProduto) {
+	public void addProduto(Produto objProduto) {
 		HttpHeaders headers = new HttpHeaders();
 		headers.setContentType(MediaType.APPLICATION_JSON);
 		RestTemplate restTemplate = new RestTemplate();
@@ -50,7 +49,7 @@ public class ClientUtil {
 		System.out.println(uri.getPath());
 	}
 
-	public void updateProdutoDemo(Produto objProduto) {
+	public void updateProduto(Produto objProduto) {
 		HttpHeaders headers = new HttpHeaders();
 		headers.setContentType(MediaType.APPLICATION_JSON);
 		RestTemplate restTemplate = new RestTemplate();
@@ -68,7 +67,7 @@ public class ClientUtil {
 		restTemplate.exchange(url, HttpMethod.DELETE, requestEntity, Void.class, id);
 	}
 	
-	public void getClienteByIdDemo(long id) {
+	public void getClienteById(long id) {
 		HttpHeaders headers = new HttpHeaders();
 		headers.setContentType(MediaType.APPLICATION_JSON);
 		RestTemplate restTemplate = new RestTemplate();
@@ -80,7 +79,7 @@ public class ClientUtil {
 		System.out.println(cliente);
 	}
 
-	public void getAllClientesDemo() {
+	public void getAllClientes() {
 		HttpHeaders headers = new HttpHeaders();
 		headers.setContentType(MediaType.APPLICATION_JSON);
 		RestTemplate restTemplate = new RestTemplate();
@@ -94,7 +93,7 @@ public class ClientUtil {
 		}
 	}
 
-	public void addClienteDemo(Cliente objCliente) {
+	public void addCliente(Cliente objCliente) {
 		HttpHeaders headers = new HttpHeaders();
 		headers.setContentType(MediaType.APPLICATION_JSON);
 		RestTemplate restTemplate = new RestTemplate();
@@ -105,7 +104,7 @@ public class ClientUtil {
 		
 	}
 
-	public void updateClienteDemo(Cliente objCliente) {
+	public void updateCliente(Cliente objCliente) {
 		HttpHeaders headers = new HttpHeaders();
 		headers.setContentType(MediaType.APPLICATION_JSON);
 		RestTemplate restTemplate = new RestTemplate();
@@ -114,7 +113,7 @@ public class ClientUtil {
 		restTemplate.put(url, requestEntity);
 	}
 
-	public void deleteClienteDemo(long id) {
+	public void deleteCliente(long id) {
 		HttpHeaders headers = new HttpHeaders();
 		headers.setContentType(MediaType.APPLICATION_JSON);
 		RestTemplate restTemplate = new RestTemplate();
@@ -123,7 +122,7 @@ public class ClientUtil {
 		restTemplate.exchange(url, HttpMethod.DELETE, requestEntity, Void.class, id);
 	}
 
-public void getEnderecoByIdDemo(long id) {
+	public void getEnderecoById(long id) {
 		HttpHeaders headers = new HttpHeaders();
 		headers.setContentType(MediaType.APPLICATION_JSON);
 		RestTemplate restTemplate = new RestTemplate();
@@ -135,7 +134,7 @@ public void getEnderecoByIdDemo(long id) {
 		System.out.println(endereco);
 	}
 
-	public void getAllEnderecosDemo() {
+	public void getAllEnderecos() {
 		HttpHeaders headers = new HttpHeaders();
 		headers.setContentType(MediaType.APPLICATION_JSON);
 		RestTemplate restTemplate = new RestTemplate();
@@ -149,7 +148,7 @@ public void getEnderecoByIdDemo(long id) {
 		}
 	}
 
-	public void addEnderecoDemo(Endereco objEndereco) {
+	public void addEndereco(Endereco objEndereco) {
 		HttpHeaders headers = new HttpHeaders();
 		headers.setContentType(MediaType.APPLICATION_JSON);
 		RestTemplate restTemplate = new RestTemplate();
@@ -159,7 +158,7 @@ public void getEnderecoByIdDemo(long id) {
 		System.out.println(uri.getPath());
 	}
 
-	public void updateEnderecoDemo(Endereco objEndereco) {
+	public void updateEndereco(Endereco objEndereco) {
 		HttpHeaders headers = new HttpHeaders();
 		headers.setContentType(MediaType.APPLICATION_JSON);
 		RestTemplate restTemplate = new RestTemplate();
@@ -168,7 +167,7 @@ public void getEnderecoByIdDemo(long id) {
 		restTemplate.put(url, requestEntity);
 	}
 
-	public void deleteEnderecoDemo(long id) {
+	public void deleteEndereco(long id) {
 		HttpHeaders headers = new HttpHeaders();
 		headers.setContentType(MediaType.APPLICATION_JSON);
 		RestTemplate restTemplate = new RestTemplate();
@@ -177,7 +176,7 @@ public void getEnderecoByIdDemo(long id) {
 		restTemplate.exchange(url, HttpMethod.DELETE, requestEntity, Void.class, id);
 	}
 
-public void getPedidoByIdDemo(long id) {
+	public void getPedidoById(long id) {
 		HttpHeaders headers = new HttpHeaders();
 		headers.setContentType(MediaType.APPLICATION_JSON);
 		RestTemplate restTemplate = new RestTemplate();
@@ -189,7 +188,7 @@ public void getPedidoByIdDemo(long id) {
 		System.out.println(pedido);
 	}
 
-	public void getAllPedidosDemo() {
+	public void getAllPedidos() {
 		HttpHeaders headers = new HttpHeaders();
 		headers.setContentType(MediaType.APPLICATION_JSON);
 		RestTemplate restTemplate = new RestTemplate();
@@ -203,7 +202,7 @@ public void getPedidoByIdDemo(long id) {
 		}
 	}
 
-	public void addPedidoDemo(Pedidos objPedido) {
+	public void addPedido(Pedidos objPedido) {
 		HttpHeaders headers = new HttpHeaders();
 		headers.setContentType(MediaType.APPLICATION_JSON);
 		RestTemplate restTemplate = new RestTemplate();
@@ -213,7 +212,7 @@ public void getPedidoByIdDemo(long id) {
 		System.out.println(uri.getPath());
 	}
 
-	public void updatePedidoDemo(Pedidos objPedido) {
+	public void updatePedido(Pedidos objPedido) {
 		HttpHeaders headers = new HttpHeaders();
 		headers.setContentType(MediaType.APPLICATION_JSON);
 		RestTemplate restTemplate = new RestTemplate();
@@ -231,87 +230,35 @@ public void getPedidoByIdDemo(long id) {
 		restTemplate.exchange(url, HttpMethod.DELETE, requestEntity, Void.class, id);
 	}
 	
-	public void getItensPedidoByIdDemo(long id) {
-		HttpHeaders headers = new HttpHeaders();
-		headers.setContentType(MediaType.APPLICATION_JSON);
-		RestTemplate restTemplate = new RestTemplate();
-		String url = "http://localhost:8080/spring-app/vendas2/itenspedido/{id}";
-		HttpEntity<String> requestEntity = new HttpEntity<String>(headers);
-		ResponseEntity<ItensPedido> responseEntity = restTemplate.exchange(url, HttpMethod.GET, requestEntity,
-				ItensPedido.class, id);
-		ItensPedido itensPedido = responseEntity.getBody();
-		System.out.println(itensPedido);
-	}
-
-	public void getAllItensPedidosDemo() {
-		HttpHeaders headers = new HttpHeaders();
-		headers.setContentType(MediaType.APPLICATION_JSON);
-		RestTemplate restTemplate = new RestTemplate();
-		String url = "http://localhost:8080/spring-app/vendas2/itenspedidos";
-		HttpEntity<String> requestEntity = new HttpEntity<String>(headers);
-		ResponseEntity<ItensPedido[]> responseEntity = restTemplate.exchange(url, HttpMethod.GET, requestEntity,
-				ItensPedido[].class);
-		ItensPedido[] itensPedidos = responseEntity.getBody();
-		for (ItensPedido itensPedido : itensPedidos) {
-			System.out.println(itensPedido);
-		}
-	}
-
-	public void addItensPedidoDemo(ItensPedido objItensPedido) {
-		HttpHeaders headers = new HttpHeaders();
-		headers.setContentType(MediaType.APPLICATION_JSON);
-		RestTemplate restTemplate = new RestTemplate();
-		String url = "http://localhost:8080/spring-app/vendas2/itenspedido";
-		HttpEntity<ItensPedido> requestEntity = new HttpEntity<ItensPedido>(objItensPedido, headers);
-		URI uri = restTemplate.postForLocation(url, requestEntity);
-		System.out.println(uri.getPath());
-	}
-
-	public void updateItensPedidoDemo(ItensPedido objItensPedido) {
-		HttpHeaders headers = new HttpHeaders();
-		headers.setContentType(MediaType.APPLICATION_JSON);
-		RestTemplate restTemplate = new RestTemplate();
-		String url = "http://localhost:8080/spring-app/vendas2/itenspedido";
-		HttpEntity<ItensPedido> requestEntity = new HttpEntity<ItensPedido>(objItensPedido, headers);
-		restTemplate.put(url, requestEntity);
-	}
-
-	public void deleteItensPedidoDemo(long id) {
-		HttpHeaders headers = new HttpHeaders();
-		headers.setContentType(MediaType.APPLICATION_JSON);
-		RestTemplate restTemplate = new RestTemplate();
-		String url = "http://localhost:8080/spring-app/vendas2/itenspedido/{id}";
-		HttpEntity<ItensPedido> requestEntity = new HttpEntity<ItensPedido>(headers);
-		restTemplate.exchange(url, HttpMethod.DELETE, requestEntity, Void.class, id);
-	}
-
 	public static void main(String args[]) {
 		ClientUtil util = new ClientUtil();
-		
-		Produto objProduto1 = new Produto(1, "Morango", 10, 1.00);
-		Produto objProduto2 = new Produto(2, "Maca", 100, 0.50);
-		Produto objProduto3 = new Produto(3, "Laranja", 50, 0.50);
-		util.addProdutoDemo(objProduto1);
-		util.addProdutoDemo(objProduto2);
-		util.addProdutoDemo(objProduto3);
-				
+						
 		Cliente cliente = new Cliente(1, "Coca-Cola");
-		util.addClienteDemo(cliente);
+		util.addCliente(cliente);
 		
 		Endereco endereco = new Endereco(1, "Rua Teste", "Sao Paulo", "07435-655");
 		endereco.setCliente(cliente);
-		util.addEnderecoDemo(endereco);
+		util.addEndereco(endereco);
 		
 		Date dataAtual = new Date();
 		Pedidos pedido = new Pedidos(1, dataAtual);
-		pedido.setCliente(cliente);		
-		util.addPedidoDemo(pedido);
+		pedido.setCliente(cliente);	
+		Produto produto = new Produto(1, "Morango", 10, 1.00);
+		pedido.getProdutos().add(produto);
+		util.addPedido(pedido);
 		
+		util.addProduto(produto);
+		
+		//Produto objProduto2 = new Produto(2, "Maca", 100, 0.50);
+		//Produto objProduto3 = new Produto(3, "Laranja", 50, 0.50);
+		//util.addProdutoDemo(objProduto2);
+		//util.addProdutoDemo(objProduto3);
+	/*
 		ItensPedido itempedido = new ItensPedido();
 		ItensPedidoPK pk = new ItensPedidoPK(1, 1);
 		itempedido.setItensPedidoPK(pk);
 		itempedido.setProduto(objProduto1);
 		itempedido.setPedido(pedido);
-		util.addItensPedidoDemo(itempedido);
+		util.addItensPedidoDemo(itempedido);*/
 	}
 }

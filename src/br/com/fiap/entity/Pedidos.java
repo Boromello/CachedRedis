@@ -11,8 +11,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
@@ -31,12 +32,15 @@ public class Pedidos implements Serializable {
 	@Temporal(value = TemporalType.TIMESTAMP)	
 	public Date dataPedido;
 
-	@ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.MERGE)
+	@ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	@JoinColumn(name = "idcliente")
 	private Cliente cliente;
 
-	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "pedido")
-	private Set<ItensPedido> itens = new LinkedHashSet<ItensPedido>();
+	@ManyToMany(fetch = FetchType.LAZY,
+			cascade = CascadeType.ALL)
+	@JoinTable(name = "pedido_produto", joinColumns = 
+	@JoinColumn(name = "idPedido"), inverseJoinColumns=@JoinColumn(name = "idProduto"))
+					private Set<Produto> produtos  = new LinkedHashSet<Produto>();
 	
 	public Pedidos() {
 		super();
@@ -64,12 +68,12 @@ public class Pedidos implements Serializable {
 		this.cliente = cliente;
 	}
 
-	public Set<ItensPedido> getItens() {
-		return itens;
+	public Set<Produto> getProdutos() {
+		return produtos;
 	}
 
-	public void setItens(Set<ItensPedido> itens) {
-		this.itens = itens;
+	public void setProdutos(Set<Produto> produtos) {
+		this.produtos = produtos;
 	}
 	
 

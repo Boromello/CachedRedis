@@ -1,7 +1,7 @@
 package br.com.fiap.repository;
 
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
 import br.com.fiap.entity.Pedidos;
 
-public interface PedidosRepository extends CrudRepository<Pedidos, Long> {
+public interface PedidosRepository extends JpaRepository<Pedidos, Long> {
 }
