@@ -1,6 +1,14 @@
 # Sping Data JPA + Cache Redis
 Sistema de cadastro de produtos e pedidos em um portal de e-commerce
 
+## Modelo UML
+![Modelo de Relacionamento](https://i.ibb.co/brLHn8N/Modelo-UML.png)
+
+
+
+
+
+
 ## Endpoints
 #### Produtos
 **GET** - Buscar produto por Id
