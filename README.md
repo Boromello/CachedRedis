@@ -52,7 +52,7 @@ http://localhost:8080/spring-app/estoque/produto
 http://localhost:8080/spring-app/estoque/produto/{id}
 ````
 ---------------------------------------
-#### Cliente
+#### Clientes
 **GET** - Buscar cliente por Id
 ````Java
 http://localhost:8080/spring-app/usuario/cliente/{id}
