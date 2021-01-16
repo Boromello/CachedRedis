@@ -19,6 +19,13 @@ redis.host=Inserir URL Host
 redis.port=Inserir Porta
 redis.password= Inserir Senha
 ````
+## Justificativa de escolha e decisões técnicas
+````
+O Grupo optou por usar JPA e REDIS, pois não temos know how das ferramentas apresentadas em aula, 
+fomos pela que mais nos identificamos.
+Usando os exemplos feitos em LABS fizemos o projeto com as entidades pedidas no enunciado.
+````
+
 
 ## Endpoints
 #### Produtos
