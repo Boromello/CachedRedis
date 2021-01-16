@@ -190,7 +190,18 @@ http://localhost:8080/spring-app/vendas/pedido
 ````javascript
 // Body
 {
-
+    "id": 0,
+    "dataPedido": 1610760538278,
+    "cliente": {
+        "id": 104,
+        "razaoSocial": "Coca-Cola",
+        "enderecos": []
+    },
+    "produtos": [
+        {
+            "id": 102
+        }
+    ]
 }
 ````
 
@@ -201,7 +212,18 @@ http://localhost:8080/spring-app/vendas/pedido
 ````javascript
 // Body
 {
-
+    "id": 5,
+    "dataPedido": 1610760538278,
+    "cliente": {
+        "id": 104,
+        "razaoSocial": "Coca-Cola",
+        "enderecos": []
+    },
+    "produtos": [
+        {
+            "id": 102
+        }
+    ]
 }
 ````
 **DELETE** - Deletar pedido
