@@ -185,7 +185,7 @@ http://localhost:8080/spring-app/vendas/pedido/{id}
 
 **POST** - Adicionar pedido
 ````Java
-http://localhost:8080/spring-app/entrega/endereco/
+http://localhost:8080/spring-app/vendas/pedido
 ````
 ````javascript
 // Body
@@ -196,7 +196,7 @@ http://localhost:8080/spring-app/entrega/endereco/
 
 **UPDATE** - Atualizar pedido
 ````Java
-http://localhost:8080/spring-app/entrega/endereco/
+http://localhost:8080/spring-app/vendas/pedido
 ````
 ````javascript
 // Body
