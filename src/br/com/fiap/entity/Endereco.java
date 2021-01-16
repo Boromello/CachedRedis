@@ -14,19 +14,19 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
-@SequenceGenerator(name ="end_sequence", sequenceName = "end_sequence")
+//@SequenceGenerator(name ="end_sequence", sequenceName = "end_sequence")
 @Table(name = "endereco")
 public class Endereco implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO, generator = "end_sequence")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	public long id;
 	public String rua;
 	public String cidade;
 	public String cep;
 	
-	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	@JoinColumn(name = "idcliente")
 	private Cliente cliente;
 

@@ -2,6 +2,7 @@ package br.com.fiap.service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheEvict;
@@ -22,7 +23,9 @@ public class EnderecoService implements IEnderecoService {
 	@Cacheable(value= "enderecoCache", key= "#id")		
 	public Endereco getEnderecoById(long id) {
 		System.out.println("getEnderecoById()");		
-		return enderecoRepository.findById(id).get();
+		Endereco endereco = enderecoRepository.findById(id);
+		System.out.println(endereco.cidade);
+		return endereco;
 	}
 	@Override	
 	@Cacheable(value= "allEnderecosCache", unless= "#result.size() == 0")	
@@ -59,6 +62,6 @@ public class EnderecoService implements IEnderecoService {
 	)
 	public void deleteEndereco(long id) {
 		System.out.println("deleteEndereco()");		
-		enderecoRepository.delete(enderecoRepository.findById(id).get());
+		enderecoRepository.delete(enderecoRepository.findById(id));
 	}
 } 

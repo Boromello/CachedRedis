@@ -248,6 +248,7 @@ public class ClientUtil {
 		util.addPedido(pedido);
 		
 		util.addProduto(produto);
+		//util.getEnderecoById(1);
 		
 		//Produto objProduto2 = new Produto(2, "Maca", 100, 0.50);
 		//Produto objProduto3 = new Produto(3, "Laranja", 50, 0.50);

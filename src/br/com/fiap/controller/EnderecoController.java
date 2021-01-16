@@ -13,15 +13,22 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
 
 import br.com.fiap.entity.Endereco;
+import br.com.fiap.service.EnderecoService;
 import br.com.fiap.service.IEnderecoService;
+import lombok.RequiredArgsConstructor;
 
 @RestController
 @RequestMapping("entrega")
+@RequiredArgsConstructor
 public class EnderecoController {
+	@Autowired
+	private EnderecoService service;	
+		
 	@Autowired
 	private IEnderecoService enderecoService;
 	
@@ -31,7 +38,8 @@ public class EnderecoController {
     }
 	@GetMapping("endereco/{id}")
 	public ResponseEntity<Endereco> getEnderecoById(@PathVariable("id") Long id) {
-		Endereco endereco = enderecoService.getEnderecoById(id);
+		System.out.println("GET BY ID");
+		Endereco endereco = service.getEnderecoById(id);
 		return new ResponseEntity<Endereco>(endereco, HttpStatus.OK);
 	}
 	@GetMapping("enderecos")
@@ -39,12 +47,15 @@ public class EnderecoController {
 		List<Endereco> lista = enderecoService.getAllEnderecos();
 		return new ResponseEntity<List<Endereco>>(lista, HttpStatus.OK);
 	}
+	@ResponseStatus(HttpStatus.CREATED)
 	@PostMapping("endereco")
-	public ResponseEntity<Void> addEndereco(@RequestBody Endereco endereco, UriComponentsBuilder builder) {
+	//public void addEndereco(@RequestBody Endereco endereco, UriComponentsBuilder builder)
+	//public void addEndereco(@RequestBody Endereco endereco)
+	 public ResponseEntity<Void> addEndereco(@RequestBody Endereco endereco, UriComponentsBuilder builder) {
 		Endereco savedEndereco = enderecoService.addEndereco(endereco);  
                 HttpHeaders headers = new HttpHeaders();
                 headers.setLocation(builder.path("/endereco/{id}").buildAndExpand(savedEndereco.id).toUri());
-                return new ResponseEntity<Void>(headers, HttpStatus.CREATED);
+                return new ResponseEntity<Void>(headers, HttpStatus.CREATED);		
 	}
 	@PutMapping("endereco")
 	public ResponseEntity<Endereco> updateEndereco(@RequestBody Endereco endereco) {
