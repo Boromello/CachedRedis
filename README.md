@@ -3,7 +3,6 @@ Sistema de cadastro de produtos e pedidos em um portal de e-commerce
 
 ## Endpoints
 #### Produtos
-
 **GET** - Buscar produto por Id
 ````Java
 http://localhost:8080/spring-app/estoque/produto/{id}
@@ -27,7 +26,6 @@ http://localhost:8080/spring-app/estoque/produto
 ````javascript
 // Body
 {
-    "id": 1,
     "nome": "Morango",
     "quantidade": 10,
     "valor": 1.0,
@@ -52,10 +50,132 @@ http://localhost:8080/spring-app/estoque/produto
 **DELETE** - Deletar produto
 ````Java
 http://localhost:8080/spring-app/estoque/produto/{id}
-````→→
+````
+---------------------------------------
+#### Cliente
+**GET** - Buscar cliente por Id
+````Java
+http://localhost:8080/spring-app/usuario/cliente/{id}
+````
+````javascript
+// Response
+{
+    "id": 52,
+    "razaoSocial": "Coca-Cola",
+    "enderecos": []
+}
+````
+
+
+**POST** - Adicionar cliente
+````Java
+http://localhost:8080/spring-app/usuario/cliente
+````
+````javascript
+// Body
+{
+    "razaoSocial": "Coca-Cola 3",
+    "enderecos": []
+}
+````
+
+**UPDATE** - Atualizar cliente
+````Java
+http://localhost:8080/spring-app/usuario/cliente
+````
+````javascript
+// Body
+{
+    "id": 52
+    "razaoSocial": "Coca-Cola 3",
+    "enderecos": []
+}
+````
+**DELETE** - Deletar cliente
+````Java
+http://localhost:8080/spring-app/usuario/cliente/{id}
+````
+---------------------------------------
+#### Endereços
+**GET** - Buscar endereço por Id
+````Java
+http://localhost:8080/spring-app/entrega/endereco/{id}
+````
+````javascript
+// Response
+{
+
+}
+````
+
+
+**POST** - Adicionar endereço
+````Java
+http://localhost:8080/spring-app/entrega/endereco/
+````
+````javascript
+// Body
+{
+
+}
+````
+
+**UPDATE** - Atualizar endereço
+````Java
+http://localhost:8080/spring-app/entrega/endereco/
+````
+````javascript
+// Body
+{
+
+}
+````
+**DELETE** - Deletar endereço
+````Java
+http://localhost:8080/spring-app/entrega/endereco/{id}
+````
+---------------------------------------
+#### Pedidos
+**GET** - Buscar pedido por Id
+````Java
+http://localhost:8080/spring-app/entrega/endereco/{id}
+````
+````javascript
+// Response
+{
+
+}
+````
+
+
+**POST** - Adicionar cliente
+````Java
+http://localhost:8080/spring-app/entrega/endereco/
+````
+````javascript
+// Body
+{
+
+}
+````
+
+**UPDATE** - Atualizar produto
+````Java
+http://localhost:8080/spring-app/entrega/endereco/
+````
+````javascript
+// Body
+{
+
+}
+````
+**DELETE** - Deletar produto
+````Java
+http://localhost:8080/spring-app/entrega/endereco/{id}
+````
+---------------------------------------
 
 ## Colaboradores
-
 | Colaborador | Github |
 | ------ | ------ |
 | Fernando Gatti | [fernandodgatti][Gatti] |
