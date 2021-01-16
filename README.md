@@ -104,7 +104,15 @@ http://localhost:8080/spring-app/entrega/endereco/{id}
 ````javascript
 // Response
 {
-
+  "id": 1,
+  "rua": "Rua Teste",
+  "cidade": "Sao Paulo",
+  "cep": "07435-655",
+  "cliente": {
+    "id": 1,
+    "razaoSocial": "Coca-Cola",
+    "enderecos": []
+  }
 }
 ````
 
@@ -116,7 +124,13 @@ http://localhost:8080/spring-app/entrega/endereco/
 ````javascript
 // Body
 {
-
+  "id" : 0,
+  "rua" : "Rua Teste19",
+  "cidade" : "Sao Paulo",
+  "cep" : "07435-655",
+  "cliente" : {
+    "id" : 1
+  }
 }
 ````
 
@@ -127,7 +141,13 @@ http://localhost:8080/spring-app/entrega/endereco/
 ````javascript
 // Body
 {
-
+  "id" : 2,
+  "rua" : "Rua Teste19",
+  "cidade" : "Sao Paulo",
+  "cep" : "07435-655",
+  "cliente" : {
+    "id" : 1
+  }
 }
 ````
 **DELETE** - Deletar endereço
