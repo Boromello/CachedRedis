@@ -138,17 +138,32 @@ http://localhost:8080/spring-app/entrega/endereco/{id}
 #### Pedidos
 **GET** - Buscar pedido por Id
 ````Java
-http://localhost:8080/spring-app/entrega/endereco/{id}
+http://localhost:8080/spring-app/vendas/pedido/{id}
 ````
 ````javascript
 // Response
 {
-
+    "id": 102,
+    "dataPedido": 1610760538278,
+    "cliente": {
+        "id": 104,
+        "razaoSocial": "Coca-Cola",
+        "enderecos": []
+    },
+    "produtos": [
+        {
+            "id": 102,
+            "nome": "Morango",
+            "quantidade": 10,
+            "valor": 1.0,
+            "pedidos": []
+        }
+    ]
 }
 ````
 
 
-**POST** - Adicionar cliente
+**POST** - Adicionar pedido
 ````Java
 http://localhost:8080/spring-app/entrega/endereco/
 ````
@@ -159,7 +174,7 @@ http://localhost:8080/spring-app/entrega/endereco/
 }
 ````
 
-**UPDATE** - Atualizar produto
+**UPDATE** - Atualizar pedido
 ````Java
 http://localhost:8080/spring-app/entrega/endereco/
 ````
@@ -169,9 +184,9 @@ http://localhost:8080/spring-app/entrega/endereco/
 
 }
 ````
-**DELETE** - Deletar produto
+**DELETE** - Deletar pedido
 ````Java
-http://localhost:8080/spring-app/entrega/endereco/{id}
+http://localhost:8080/spring-app/vendas/pedido/{id}
 ````
 ---------------------------------------
 
