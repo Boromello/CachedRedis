@@ -6,12 +6,14 @@ Sistema de cadastro de produtos e pedidos em um portal de e-commerce
 
 ## Configuração DB 
 #### MySQL
+database.properties
 ````Java
 database.url=Inserir URL Database
 database.username=Inserir Username
 database.password=Inserir Password
 ````
 #### Redis
+redis.properties
 ````Java
 redis.host=Inserir URL Host
 redis.port=Inserir Porta
