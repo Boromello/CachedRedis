@@ -4,10 +4,19 @@ Sistema de cadastro de produtos e pedidos em um portal de e-commerce
 ## Modelo UML
 ![Modelo de Relacionamento](https://i.ibb.co/brLHn8N/Modelo-UML.png)
 
-
-
-
-
+## Configuração DB 
+#### MySQL
+````Java
+database.url=Inserir URL Database
+database.username=Inserir Username
+database.password=Inserir Password
+````
+#### Redis
+````Java
+redis.host=Inserir URL Host
+redis.port=Inserir Porta
+redis.password= Inserir Senha
+````
 
 ## Endpoints
 #### Produtos
