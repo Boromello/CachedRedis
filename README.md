@@ -4,51 +4,55 @@ Sistema de cadastro de produtos e pedidos em um portal de e-commerce
 ## Endpoints
 #### Produtos
 
-**GET** - Produto por ID
+**GET** - Buscar produto por Id
 ````Java
 http://localhost:8080/spring-app/estoque/produto/{id}
 ````
-
-**GET** - Todos os produtos
-````java
-http://localhost:8080/spring-app/estoque/produtos
-````
 ````javascript
-[
-    {
-        "id": 1,
-        "nome": "Morango",
-        "quantidade": 10,
-        "valor": 1.0
-    },
-    {
-        "id": 2,
-        "nome": "Maca",
-        "quantidade": 100,
-        "valor": 0.5
-    },
-    {
-        "id": 3,
-        "nome": "Laranja",
-        "quantidade": 50,
-        "valor": 0.5
-    }
-]
+// Response
+{
+    "id": 1,
+    "nome": "Morango",
+    "quantidade": 10,
+    "valor": 1.0,
+    "pedidos": []
+}
 ````
+
 
 **POST** - Adicionar produto
 ````Java
 http://localhost:8080/spring-app/estoque/produto
+````
+````javascript
+// Body
+{
+    "id": 1,
+    "nome": "Morango",
+    "quantidade": 10,
+    "valor": 1.0,
+    "pedidos": []
+}
 ````
 
 **UPDATE** - Atualizar produto
 ````Java
 http://localhost:8080/spring-app/estoque/produto
 ````
+````javascript
+// Body
+{
+    "id": 1,
+    "nome": "Morango Update",
+    "quantidade": 10,
+    "valor": 1.0,
+    "pedidos": []
+}
+````
 **DELETE** - Deletar produto
 ````Java
 http://localhost:8080/spring-app/estoque/produto/{id}
-````
+````→→
 
 ## Colaboradores
 
